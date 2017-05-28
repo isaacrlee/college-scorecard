@@ -23,13 +23,5 @@ for d in range (1,len(data)):
         elif int(data[d][-1]) <38000: target.append(2)
         else: target.append(3)
 
-        
-        # if int(data[d][-1]) <21400: target.append(0)
-        # elif int(data[d][-1]) <26400: target.append(1)
-        # elif int(data[d][-1]) <30600: target.append(3)
-        # elif int(data[d][-1]) <36100: target.append(4)
-        # elif int(data[d][-1]) <43200: target.append(5)
-        # else: target.append(6)
-        #target.append(int(data[d][-1])/15000 if int(data[d][-1])/15000 < 8 else 8)
 
-print ([[target.count(i)] for i in range(0,7)])
+print ([[target.count(i)] for i in range(0,4)])
