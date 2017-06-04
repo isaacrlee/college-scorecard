@@ -1,4 +1,5 @@
 import numpy as np
+import pydotplus
 from sklearn import tree
 from sklearn.preprocessing import Imputer
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
@@ -102,6 +103,17 @@ def regressors():
     print("Gradient Boost: %0.2f" % (np.sqrt(np.absolute(averages[7].mean()))))
     print("Linear Regression: %0.2f" %
           (np.sqrt(np.absolute(averages[8].mean()))))
+
+
+def print_tree():
+    feature_names = ["LATITUDE", "LONGITUDE", "ADM_RATE", "ADM_RATE_ALL", "SAT_AVG", "UGDS", "UGDS_WHITE", "UGDS_BLACK", "UGDS_HISP", "UGDS_ASIAN", "UGDS_AIAN", "UGDS_NHPI", "UGDS_2MOR", "UGDS_NRA", "UGDS_UNKN", "UGDS_WHITENH", "UGDS_BLACKNH", "UGDS_API", "UGDS_AIANOLD", "UGDS_HISPOLD", "UG_NRA", "UG_UNKN", "UG_WHITENH", "UG_BLACKNH", "UG_API", "UG_AIANOLD", "UG_HISPOLD", "TUITIONFEE_IN", "TUITIONFEE_OUT", "TUITFTE", "INEXPFTE", "AVGFACSAL", "PFTFAC", "PCTPELL",
+                     "PCTFLOAN", "COUNT_ED", "LOAN_EVER", "PELL_EVER", "AGE_ENTRY", "AGEGE24", "FEMALE", "MARRIED", "DEPENDENT", "VETERAN", "FIRST_GEN", "FAMINC", "MD_FAMINC", "FAMINC_IND", "PCT_WHITE", "PCT_BLACK", "PCT_ASIAN", "PCT_HISPANIC", "PCT_BA", "PCT_GRAD_PROF", "PCT_BORN_US", "MEDIAN_HH_INC", "POVERTY_RATE", "UNEMP_RATE", "LN_MEDIAN_HH_INC", "DEBT_MDN_SUPP", "GRAD_DEBT_MDN_SUPP", "GRAD_DEBT_MDN10YR_SUPP", "UGDS_MEN", "UGDS_WOMEN", "MEDIAN_HH_INC2", "10 yr median"]
+    # target_names = ["<=23800", "<=30600", "<=38000", ">38000"]
+    clf = tree.DecisionTreeRegressor(max_depth=3).fit(samples, income)
+    dot_data = tree.export_graphviz(
+        clf, out_file=None, feature_names=feature_names)
+    graph = pydotplus.graph_from_dot_data(dot_data)
+    graph.write_pdf("tree.pdf")
 
 if __name__ == "__main__":
     classifiers()
