@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+# Predicting Postgraduate Income
+### Northwestern University EECS 349 
+##### By: Murphy Angelo, Jared Fernandez, Isaac Lee 
+##### Contact: jared.fern@u.northwestern.edu,  isaaclee2019@u.northwestern.edu, mca@u.northwestern.edu
 
-You can use the [editor on GitHub](https://github.com/isaacrlee/college-scorecard/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### ABSTRACT
+We used machine learning to explore data on American colleges to predict post-graduate earnings. There are hundreds of different features that make each college unique, including: location, admission rates, tuition, demographics, average student loans, and average standardized test scores. We want to discover which of these features are most significant in predicting the median ten year post-graduate earnings for a given college.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+We used the Scikit-learn Python package to test different learners. Additionally, we tested multiple methods of ensembling these learners together. For the classification task, we tested the accuracy of the following base classifiers: Decision Tree, 1/3/5-Nearest Neighbor, Gaussian Naive Bayes, Adaboost, Random Forest, Recurrent Neural Net, Gradient Boosting, and Logistic Regression. Additionally, we tested an ensemble method, combining all the previous classifiers and assigning class using majority vote.  For the regression task, the same base algorithms were used. However, the Naive Bayes classifier was substituted with a linear regression model. Our accuracies can be found in Table 1 below.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/isaacrlee/college-scorecard/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+From our decision tree, it can be determined that the most important features are: percentage of students that took out loans, amount of university spending per student, and average student family income.
+A decision tree that shows the most important features when predicting Md10yr.
