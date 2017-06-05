@@ -11,5 +11,6 @@ We used the Scikit-learn Python package to test different learners. Additionally
 ![Table 1](https://raw.githubusercontent.com/isaacrlee/college-scorecard/master/table1.png)
 
 From our decision tree, it can be determined that the most important features are: percentage of students that took out loans, amount of university spending per student, and average student family income.
+
 ![Tree](https://raw.githubusercontent.com/isaacrlee/college-scorecard/master/tree.png)
 _A decision tree that shows the most important features when predicting Md10yr._
